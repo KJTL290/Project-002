@@ -1,0 +1,23 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.delete-btn {
+    margin-left: 10px;
+}
+
+.todo-actions {
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
