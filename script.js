@@ -3,10 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const todoInput = document.getElementById('todoInput');
     const todoList = document.getElementById('todoList');
 
-    // Load todos from localStorage
     let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-    // Render todos
     function renderTodos() {
         todoList.innerHTML = '';
         todos.forEach((todo, index) => {
@@ -28,11 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
             todoList.appendChild(li);
         });
         
-        // Save to localStorage
         localStorage.setItem('todos', JSON.stringify(todos));
     }
 
-    // Add todo
     todoForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const todoText = todoInput.value.trim();
@@ -47,18 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Toggle todo completion status
     window.toggleTodo = (index) => {
         todos[index].completed = !todos[index].completed;
         renderTodos();
     };
 
-    // Delete todo
     window.deleteTodo = (index) => {
         todos.splice(index, 1);
         renderTodos();
     };
 
-    // Initial render
     renderTodos();
 });
